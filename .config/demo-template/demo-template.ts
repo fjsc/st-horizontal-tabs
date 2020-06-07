@@ -14,7 +14,6 @@ import '../../src/components/st-horizontal-tabs';
 import styles from './demo-template.css';
 
 enum TemplateSections {
-  design = 'Design',
   demo = 'Demo',
   demoSourceCode = 'Demo Code',
   api = 'Component Api',
@@ -46,11 +45,9 @@ export class DemoTemplate extends LitElement {
         ${this.getTabs()}
 
         <div class="demo-template__content">
-            ${this.currentSection === TemplateSections.design ?
-      html`<section><h2>Design & Behavior</h2><p>${this.designBehavior}</p></section>
-           <section><h2>Usage and Best Practices</h2><slot name="usage"></slot></section>` : ''}
             ${this.currentSection === TemplateSections.demoSourceCode ?
-      html`<textarea>${this.demoSourceCode}</textarea>` : ''}
+      html`<textarea>${this.demoSourceCode}</textarea>
+          ` : ''}
             ${this.currentSection === TemplateSections.sourceCode ?
       html`<textarea>${this.sourceCode}</textarea>` : ''}
             <!--<wc-monaco-editor language="markdown"></wc-monaco-editor>-->
@@ -58,6 +55,9 @@ export class DemoTemplate extends LitElement {
                 <div class="content">
                     <slot name="content"></slot>
                 </div>
+                <div class="demo-template__separator"></div>
+                <section><h2>Design & Behavior</h2><p>${this.designBehavior}</p></section>
+                <section><h2>Usage and Best Practices</h2><slot name="usage"></slot></section>
             ` : ''}
         </div>
 
