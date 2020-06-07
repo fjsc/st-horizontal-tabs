@@ -23,7 +23,7 @@ module.exports =  merge(common, {
     compress: true,
     port: 8080
   } : {},
-  externals: !isDevelopment ? [] : Object.keys(pkg.dependencies),
+  externals: isDevelopment ? [] : Object.keys(pkg.dependencies),
   plugins: isDevelopment ? [
     new HtmlWebpackPlugin({
       title: "St Element Starter",
