@@ -4,14 +4,26 @@
   "description": "boilerplate LitElement setup with TypeScript and postCSS",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.config.cjs",
-    "build": "standard-changelog && npm run clean && npm run build:element",
+    "build": "standard-changelog && npm run clean && npm run build:element && npm run build:demo",
     "build:element": "webpack --config webpack.prod.config.cjs",
+    "build:demo": "cross-env NODE_ENV=production webpack --config webpack.dev.config.cjs",
     "clean": "rimraf dist",
     "commit": "git-cz",
     "doc": "typedoc src",
     "test": "karma start karma.conf.cjs"
   },
-  "author": "Fran Sevilla",
+  "contributors": [
+    { 
+      "name" : "Fran Sevilla", 
+      "email" : "fjsc.noah@gmail.com", 
+      "url" : "https://github.com/fjsc"
+    },
+    { 
+      "name" : "Abimael Barea", 
+      "email" : "elabi3@gmail.com", 
+      "url" : "https://github.com/elabi3"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
     "@open-wc/testing": "2.5.17",
@@ -24,6 +36,7 @@
     "babel-loader": "^8.1.0",
     "chai": "4.2.0",
     "commitizen": "^4.1.2",
+    "cross-env": "^7.0.2",
     "css-loader": "3.5.3",
     "eslint": "7.2.0",
     "eslint-plugin-html": "6.0.2",

@@ -52,10 +52,11 @@ export class StHorizontalTabs extends LitElement {
    */
   public getTabElement(option: StHorizontalTab, index: number): TemplateResult {
     return html`
-    <a class="tab ${this.getTabClasses(option)}"
-      @click="${() => this.activateOption(option)}"
-      href="javascript:void(0)"
-      id="${this.qaTag + '-tab-' + index}">${option.text}</a>`;
+      <a class="tab ${this.getTabClasses(option)}"
+        @click="${() => this.activateOption(option)}"
+        href="javascript:void(0)"
+        id="${this.qaTag + '-tab-' + index}">${option.text}</a>
+    `;
   }
 
   public activateOption(option: StHorizontalTab): void {
