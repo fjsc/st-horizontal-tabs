@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "boilerplate LitElement setup with TypeScript and postCSS",
   "scripts": {
-    "dev": "standard-changelog && webpack-dev-server --config webpack.dev.config.cjs",
+    "dev": "webpack-dev-server --config webpack.dev.config.cjs",
     "build": "standard-changelog && npm run clean && npm run build:element && npm run build:demo",
     "build:element": "webpack --config webpack.prod.config.cjs",
     "build:demo": "cross-env NODE_ENV=production webpack --config webpack.dev.config.cjs",
