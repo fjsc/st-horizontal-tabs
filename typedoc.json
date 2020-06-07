@@ -1,0 +1,7 @@
+{
+    "exclude": "**/*+(.css|.spec.ts)",
+    "externalPattern": true,
+    "inputFiles": ["./src"],
+    "mode": "file",
+    "out": "docs"
+}

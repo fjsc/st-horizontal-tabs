@@ -1,0 +1,44 @@
+# IDEs
+.history/
+.idea/
+.vscode/
+
+# Node
+node/
+node_modules/
+npm-debug.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Karma
+coverage/
+
+# use glob syntax.
+syntax: glob
+*.ser
+*.class
+*~
+*.bak
+#*.off
+*.old
+*.log
+*.out
+*.tmp
+*.swp
+*.lock
+*.st
+.attach_pid**
+*.flattened-pom.xml
+output.txt
+
+# idea
+.idea
+*.iml
+
+package-lock.json
+.dist
+dist
+node_modules
+docs

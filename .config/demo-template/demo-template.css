@@ -1,0 +1,58 @@
+:host {
+    font-family: 'Nunito';
+}
+
+.demo-template{
+    
+    &__title {
+        font-weight: lighter;
+        font-size: 2.5rem
+    }
+
+    &__hr {
+        border: none;
+        border-top: 1px solid #cdd6df;
+        width: 40px;
+        margin: 25px 0 35px;
+    }
+
+    &__description {
+        line-height: 1.5;
+        max-width: 700px;
+        font-size: 18px;
+        color: #0f1b27;
+    }
+
+    &__separator {
+        height: 1px;    
+        background-color: #cdd6df;
+        margin: 40px 0;
+        display: block;
+    }
+
+    &__content {
+        background: #f1f1f1;
+        padding: 50px 30px;
+    }
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    background: #ccc;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.tab--active {
+    background-color: #f1f1f1;
+    cursor: default;   
+    font-weight: 7  00; 
+}
+
+textarea {
+    width: 100%;
+    min-height: 40vh;
+}
