@@ -59,6 +59,7 @@
     "webpack-merge": "4.2.2"
   },
   "dependencies": {
+    "@vanillawc/wc-markdown": "^1.5.7",
     "@vanillawc/wc-monaco-editor": "^1.10.1",
     "lit-element": "2.3.1"
   },
