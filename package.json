@@ -1,10 +1,10 @@
 {
   "name": "st-element-starter",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "boilerplate LitElement setup with TypeScript and postCSS",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.config.cjs",
-    "build": "npm run clean && npm run build:element",
+    "build": "standard-changelog && npm run clean && npm run build:element",
     "build:element": "webpack --config webpack.prod.config.cjs",
     "clean": "rimraf dist",
     "commit": "git-cz",
@@ -44,6 +44,7 @@
     "puppeteer": "^3.3.0",
     "raw-loader": "^4.0.1",
     "rimraf": "^3.0.2",
+    "standard-changelog": "^2.0.24",
     "style-loader": "1.2.1",
     "terser-webpack-plugin": "^3.0.3",
     "to-string-loader": "1.1.6",

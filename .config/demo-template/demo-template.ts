@@ -9,14 +9,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-import { LitElement, html, customElement, TemplateResult, property, css, internalProperty, unsafeCSS } from 'lit-element';
+import {css, customElement, html, internalProperty, LitElement, property, TemplateResult, unsafeCSS} from 'lit-element';
 import '../../src/components/st-horizontal-tabs';
 import styles from './demo-template.css';
 
 enum TemplateSections {
-    demo = 'Demo',
-    api = 'Api',
-    sourceCode = 'Source Code'
+  demo = 'Demo',
+  demoSourceCode = 'Demo Code',
+  api = 'Component Api',
+  sourceCode = 'Component Code',
+  changelog = 'Changelog',
 }
 
 @customElement('demo-template')
@@ -24,7 +26,10 @@ export class DemoTemplate extends LitElement {
 
   @property() componentName: string;
   @property() componentDescription: string;
+  @property() designBehavior: string;
+  @property() demoSourceCode: string;
   @property() sourceCode: string;
+  @property() changelog: string;
 
   static styles = css`${unsafeCSS(styles)}`;
 
@@ -38,18 +43,26 @@ export class DemoTemplate extends LitElement {
         <hr class="demo-template__hr">
         <div class="demo-template__description">${this.componentDescription}</div>
         <div class="demo-template__separator"></div>
-        
+
         ${this.getTabs()}
-        
+
         <div class="demo-template__content">
-            ${this.currentSection === TemplateSections.sourceCode ? 
-                html`<textarea>${this.sourceCode}</textarea>` : ''
-            }
+            ${this.currentSection === TemplateSections.demoSourceCode ?
+      html`<textarea>${this.demoSourceCode}</textarea>
+          ` : ''}
+            ${this.currentSection === TemplateSections.changelog ?
+      html`<textarea disabled>${this.changelog}</textarea>
+          ` : ''}
+            ${this.currentSection === TemplateSections.sourceCode ?
+      html`<textarea>${this.sourceCode}</textarea>` : ''}
             <!--<wc-monaco-editor language="markdown"></wc-monaco-editor>-->
             ${this.currentSection === TemplateSections.demo ? html`
                 <div class="content">
-                    <slot></slot>
+                    <slot name="content"></slot>
                 </div>
+                <div class="demo-template__separator"></div>
+                <section><h2>Design & Behavior</h2><p>${this.designBehavior}</p></section>
+                <section><h2>Usage and Best Practices</h2><slot name="usage"></slot></section>
             ` : ''}
         </div>
 
@@ -60,18 +73,18 @@ export class DemoTemplate extends LitElement {
   public getTabs() {
     return html`
       <div class="tabs">
-        ${Object.keys(TemplateSections).map((key: string) => 
-        html `
-            <div @click="${() => this.setTab(TemplateSections[key])}" 
-                class="tab ${this.currentSection === TemplateSections[key] ? 'tab--active': ''}">
+        ${Object.keys(TemplateSections).map((key: string) =>
+      html`
+            <div @click="${() => this.setTab(TemplateSections[key])}"
+                class="tab ${this.currentSection === TemplateSections[key] ? 'tab--active' : ''}">
                 ${TemplateSections[key]}
             </div>
         `)}
       </div>
-    `
+    `;
   }
 
   public setTab(tab: TemplateSections) {
-      this.currentSection = tab;
+    this.currentSection = tab;
   }
 }
