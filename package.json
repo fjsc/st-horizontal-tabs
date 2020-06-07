@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "boilerplate LitElement setup with TypeScript and postCSS",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.config.cjs",
+    "dev": "standard-changelog && webpack-dev-server --config webpack.dev.config.cjs",
     "build": "standard-changelog && npm run clean && npm run build:element && npm run build:demo",
     "build:element": "webpack --config webpack.prod.config.cjs",
     "build:demo": "cross-env NODE_ENV=production webpack --config webpack.dev.config.cjs",
@@ -13,15 +13,15 @@
     "test": "karma start karma.conf.cjs"
   },
   "contributors": [
-    { 
-      "name" : "Fran Sevilla", 
-      "email" : "fjsc.noah@gmail.com", 
-      "url" : "https://github.com/fjsc"
+    {
+      "name": "Fran Sevilla",
+      "email": "fjsc.noah@gmail.com",
+      "url": "https://github.com/fjsc"
     },
-    { 
-      "name" : "Abimael Barea", 
-      "email" : "elabi3@gmail.com", 
-      "url" : "https://github.com/elabi3"
+    {
+      "name": "Abimael Barea",
+      "email": "elabi3@gmail.com",
+      "url": "https://github.com/elabi3"
     }
   ],
   "license": "MIT",
