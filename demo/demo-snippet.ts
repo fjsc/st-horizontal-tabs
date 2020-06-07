@@ -18,6 +18,7 @@ import '../.config/demo-template/demo-template';
 /** NOT CHANGE!! */
 const demoCode = require('!!raw-loader!./demo-snippet');
 const sourceCode = require('!!raw-loader!../src/components/st-horizontal-tabs');
+const changelog = require('!!raw-loader!../CHANGELOG.md');
 
 /** DEMO REQUIRED IMPORTS */
 
@@ -50,7 +51,8 @@ export class DemoSnippet extends LitElement {
         componentDescription="${this.description}"
         designBehavior="${this.design}"
         sourceCode="${sourceCode.default}"
-        demoSourceCode="${demoCode.default}">
+        demoSourceCode="${demoCode.default}"
+        changelog="${changelog.default}">
 
        <section slot="content">
           <st-horizontal-tabs

@@ -18,6 +18,7 @@ enum TemplateSections {
   demoSourceCode = 'Demo Code',
   api = 'Component Api',
   sourceCode = 'Component Code',
+  changelog = 'Changelog',
 }
 
 @customElement('demo-template')
@@ -28,6 +29,7 @@ export class DemoTemplate extends LitElement {
   @property() designBehavior: string;
   @property() demoSourceCode: string;
   @property() sourceCode: string;
+  @property() changelog: string;
 
   static styles = css`${unsafeCSS(styles)}`;
 
@@ -47,6 +49,9 @@ export class DemoTemplate extends LitElement {
         <div class="demo-template__content">
             ${this.currentSection === TemplateSections.demoSourceCode ?
       html`<textarea>${this.demoSourceCode}</textarea>
+          ` : ''}
+            ${this.currentSection === TemplateSections.changelog ?
+      html`<textarea disabled>${this.changelog}</textarea>
           ` : ''}
             ${this.currentSection === TemplateSections.sourceCode ?
       html`<textarea>${this.sourceCode}</textarea>` : ''}
