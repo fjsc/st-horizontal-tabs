@@ -1,3 +1,31 @@
+# 0.1.0 (2020-06-14)
+
+
+### Features
+
+* **changelog:** adding auto-generated changelog ([805cd6f](https://github.com/fjsc/st-element/commit/805cd6f016edf03da7d9faffe1d82f98b23dd4ba))
+* **changelog:** adding file ([50ea415](https://github.com/fjsc/st-element/commit/50ea415f978a85d71d19160bf0cd60edf1281d37))
+* **changelog:** adding markdown visualizer ([20a17ab](https://github.com/fjsc/st-element/commit/20a17ab5f002317dec96dc1264b8ebfbaacc7840))
+* **changelog:** update ([1e22a6b](https://github.com/fjsc/st-element/commit/1e22a6ba2b1f86b17c4317a001aa622e7dd98563))
+* **demo:** adding design tab and splitting source & demo code ([8ed6023](https://github.com/fjsc/st-element/commit/8ed6023b5c1e023d058810037dbb766292531058))
+* **demo:** merge design description and demo ([f35c411](https://github.com/fjsc/st-element/commit/f35c4118695826f364de813a93448436237a2e1a))
+
+
+
+# 0.1.0 (2020-06-14)
+
+
+### Features
+
+* **changelog:** adding auto-generated changelog ([805cd6f](https://github.com/fjsc/st-element/commit/805cd6f016edf03da7d9faffe1d82f98b23dd4ba))
+* **changelog:** adding file ([50ea415](https://github.com/fjsc/st-element/commit/50ea415f978a85d71d19160bf0cd60edf1281d37))
+* **changelog:** adding markdown visualizer ([20a17ab](https://github.com/fjsc/st-element/commit/20a17ab5f002317dec96dc1264b8ebfbaacc7840))
+* **changelog:** update ([1e22a6b](https://github.com/fjsc/st-element/commit/1e22a6ba2b1f86b17c4317a001aa622e7dd98563))
+* **demo:** adding design tab and splitting source & demo code ([8ed6023](https://github.com/fjsc/st-element/commit/8ed6023b5c1e023d058810037dbb766292531058))
+* **demo:** merge design description and demo ([f35c411](https://github.com/fjsc/st-element/commit/f35c4118695826f364de813a93448436237a2e1a))
+
+
+
 # 0.1.0 (2020-06-07)
 
 

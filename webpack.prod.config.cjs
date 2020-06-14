@@ -1,7 +1,7 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common.cjs')
 const path = require('path')
-const GeneratePackageJsonPlugin = require("generate-package-json-webpack-plugin");
+const GeneratePackageJsonPlugin = require("generate-package-json-webpack-plugin")
 const TerserPlugin = require('terser-webpack-plugin')
 
 const dist = path.resolve(__dirname, 'dist')

@@ -9,9 +9,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-import {customElement, html, internalProperty, LitElement, TemplateResult} from 'lit-element';
+import { customElement, html, internalProperty, LitElement, TemplateResult } from 'lit-element';
 import '../src/components/st-horizontal-tabs';
-import {StHorizontalTab} from '../src/models/st-horizontal-tabs.model';
+import { StHorizontalTab } from '../src/models/st-horizontal-tabs.model';
 import '../.config/demo-template/demo-template';
 
 

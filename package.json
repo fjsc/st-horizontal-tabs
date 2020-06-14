@@ -2,6 +2,20 @@
   "name": "st-element-starter",
   "version": "0.1.0",
   "description": "boilerplate LitElement setup with TypeScript and postCSS",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stratio/st-horizontal-tabs.git"
+  },
+  "keywords": [
+    "egeo",
+    "stratio",
+    "webcomponent",
+    "lit-element",
+    "postcss",
+    "webpack",
+    "tabs"
+ ],
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.config.cjs",
     "build": "standard-changelog && npm run clean && npm run build:element && npm run build:demo",
@@ -11,8 +25,8 @@
     "commit": "git-cz",
     "doc": "typedoc src",
     "test": "karma start karma.conf.cjs",
-    "lint": "eslint src/**"
-    "doc2": "typedoc src && concat-md --toc --decrease-title-levels --dir-name-as-title docs > README.md",
+    "lint": "eslint src/**",
+    "doc2": "typedoc src && concat-md --toc --decrease-title-levels --dir-name-as-title docs > README.md"
   },
   "contributors": [
     {
@@ -26,7 +40,6 @@
       "url": "https://github.com/elabi3"
     }
   ],
-  "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
@@ -81,9 +94,11 @@
     "webpack-merge": "4.2.2"
   },
   "dependencies": {
+    "@types/prismjs": "^1.16.1",
     "@vanillawc/wc-markdown": "^1.5.7",
     "@vanillawc/wc-monaco-editor": "^1.10.1",
-    "lit-element": "2.3.1"
+    "lit-element": "2.3.1",
+    "prismjs": "^1.20.0"
   },
   "config": {
     "commitizen": {
