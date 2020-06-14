@@ -10,6 +10,7 @@
     "clean": "rimraf dist",
     "commit": "git-cz",
     "doc": "typedoc src",
+    "doc2": "typedoc src && concat-md --toc --decrease-title-levels --dir-name-as-title docs > README.md",
     "test": "karma start karma.conf.cjs"
   },
   "contributors": [
@@ -36,6 +37,7 @@
     "babel-loader": "^8.1.0",
     "chai": "4.2.0",
     "commitizen": "^4.1.2",
+    "concat-md": "^0.3.5",
     "cross-env": "^7.0.2",
     "css-loader": "3.5.3",
     "eslint": "7.2.0",
@@ -63,6 +65,8 @@
     "to-string-loader": "1.1.6",
     "ts-loader": "7.0.5",
     "typedoc": "^0.17.7",
+    "typedoc-plugin-markdown": "^2.3.1",
+    "typedoc-plugin-no-inherit": "^1.1.10",
     "typedoc-webpack-plugin": "^1.1.4",
     "typescript": "3.9.5",
     "web-component-analyzer": "1.0.3",

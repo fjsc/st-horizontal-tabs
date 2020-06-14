@@ -1,7 +1,10 @@
 {
-    "exclude": "**/*+(.css|.spec.ts)",
-    "externalPattern": true,
-    "inputFiles": ["./src"],
-    "mode": "file",
-    "out": "docs"
+  "exclude": "**/*+(.css|.spec.ts)",
+  "externalPattern": true,
+  "inputFiles": [
+    "./src"
+  ],
+  "mode": "file",
+  "out": "docs",
+  "ignoreCompilerErrors": true
 }

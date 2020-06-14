@@ -14,9 +14,16 @@ import { StHorizontalTab, StHorizontalTabStatus } from '../models/st-horizontal-
 
 import styles from './st-horizontal-tabs.css';
 
+/**
+ * Documentation StHorizontalTabs
+ * @noInheritDoc
+ */
 @customElement('st-horizontal-tabs')
 export class StHorizontalTabs extends LitElement {
-  
+
+  /**
+   * @ignore
+   */
   static styles = css`${unsafeCSS(styles)}`;
 
   /** Current active option */
@@ -47,8 +54,8 @@ export class StHorizontalTabs extends LitElement {
 
   /**
    * Returns single tab
-   * @param option 
-   * @param index 
+   * @param option
+   * @param index
    */
   public getTabElement(option: StHorizontalTab, index: number): TemplateResult {
     return html`

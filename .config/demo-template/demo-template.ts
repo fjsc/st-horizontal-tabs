@@ -30,6 +30,7 @@ export class DemoTemplate extends LitElement {
   @property() designBehavior: string;
   @property() demoSourceCode: string;
   @property() sourceCode: string;
+  @property() api: string;
   @property() changelog: string;
 
   static styles = css`${unsafeCSS(styles)}`;
@@ -48,8 +49,11 @@ export class DemoTemplate extends LitElement {
         ${this.getTabs()}
 
         <div class="demo-template__content">
-            ${this.currentSection === TemplateSections.demoSourceCode ?
+           ${this.currentSection === TemplateSections.demoSourceCode ?
       html`<textarea>${this.demoSourceCode}</textarea>
+          ` : ''}
+           ${this.currentSection === TemplateSections.api ?
+      html`<wc-markdown>${this.api}</wc-markdown>
           ` : ''}
             ${this.currentSection === TemplateSections.changelog ?
       html`<wc-markdown>${this.changelog}</wc-markdown>
