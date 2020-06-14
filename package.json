@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "description": "boilerplate LitElement setup with TypeScript and postCSS",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.config.cjs",
+    "start": "webpack-dev-server --config webpack.dev.config.cjs",
     "build": "standard-changelog && npm run clean && npm run build:element && npm run build:demo",
     "build:element": "webpack --config webpack.prod.config.cjs",
     "build:demo": "cross-env NODE_ENV=production webpack --config webpack.dev.config.cjs",
     "clean": "rimraf dist",
     "commit": "git-cz",
     "doc": "typedoc src",
+    "test": "karma start karma.conf.cjs",
+    "lint": "eslint src/**"
     "doc2": "typedoc src && concat-md --toc --decrease-title-levels --dir-name-as-title docs > README.md",
-    "test": "karma start karma.conf.cjs"
   },
   "contributors": [
     {
@@ -27,6 +28,8 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@open-wc/testing": "2.5.17",
     "@open-wc/testing-karma": "3.4.2",
     "@types/chai": "4.2.11",
@@ -45,6 +48,7 @@
     "generate-package-json-webpack-plugin": "^1.0.1",
     "html-webpack-harddisk-plugin": "1.0.1",
     "html-webpack-plugin": "4.3.0",
+    "husky": "^4.2.5",
     "karma": "5.0.9",
     "karma-chai": "0.1.0",
     "karma-mocha": "2.0.1",
@@ -55,7 +59,8 @@
     "postcss-import": "12.0.1",
     "postcss-loader": "3.0.0",
     "postcss-nested": "4.2.1",
-    "prettier": "2.0.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
     "puppeteer": "^3.3.0",
     "raw-loader": "^4.0.1",
     "rimraf": "^3.0.2",
@@ -83,6 +88,18 @@
   "config": {
     "commitizen": {
       "path": "./.config/commitizen-format/st-commitizen.js"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "pretty-quick --staged && npm run lint",
+      "pre-push": "npm run test && npm run build"
     }
   }
 }
