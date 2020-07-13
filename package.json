@@ -17,14 +17,15 @@
     "tabs"
   ],
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.config.cjs",
+    "start": "webpack-dev-server --config webpack.dev.config.js",
     "build": "standard-changelog && npm run clean && npm run build:element && npm run build:demo",
-    "build:element": "webpack --config webpack.prod.config.cjs",
-    "build:demo": "cross-env NODE_ENV=production webpack --config webpack.dev.config.cjs",
+    "build:element": "webpack --config webpack.config.js",
+    "build:demo": "cross-env NODE_ENV=production webpack --config webpack.dev.config.js",
     "clean": "rimraf dist",
     "commit": "git-cz",
     "doc": "typedoc src",
-    "test": "karma start karma.conf.cjs",
+    "test": "karma start karma.conf.js",
+    "test:watch": "karma start karma.conf.js --watch",
     "lint": "eslint src/**",
     "doc2": "typedoc src && concat-md --toc --decrease-title-levels --dir-name-as-title docs > README.md"
   },
@@ -66,6 +67,7 @@
     "karma-chai": "0.1.0",
     "karma-mocha": "2.0.1",
     "karma-typescript": "^5.0.3",
+    "karma-webpack": "^4.0.2",
     "lit-analyzer": "1.1.11",
     "lit-css-loader": "0.0.3",
     "mocha": "7.2.0",

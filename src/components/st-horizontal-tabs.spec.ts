@@ -1,5 +1,5 @@
-import {StHorizontalTabs} from './st-horizontal-tabs';
-import {fixture, html} from '@open-wc/testing';
+import { StHorizontalTabs } from './st-horizontal-tabs';
+import { fixture, html } from '@open-wc/testing';
 
 const assert = chai.assert;
 

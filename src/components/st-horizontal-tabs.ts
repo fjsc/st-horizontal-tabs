@@ -9,7 +9,15 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-import { LitElement, html, customElement, property, css, unsafeCSS, TemplateResult } from 'lit-element';
+import {
+  LitElement,
+  html,
+  customElement,
+  property,
+  css,
+  unsafeCSS,
+  TemplateResult,
+} from 'lit-element';
 import { StHorizontalTab, StHorizontalTabStatus } from '../models/st-horizontal-tabs.model';
 
 import styles from './st-horizontal-tabs.css';
@@ -20,11 +28,12 @@ import styles from './st-horizontal-tabs.css';
  */
 @customElement('st-horizontal-tabs')
 export class StHorizontalTabs extends LitElement {
-
   /**
    * @ignore
    */
-  static styles = css`${unsafeCSS(styles)}`;
+  static styles = css`
+    ${unsafeCSS(styles)}
+  `;
 
   /** Current active option */
   @property()
@@ -41,13 +50,8 @@ export class StHorizontalTabs extends LitElement {
   public qaTag: string;
 
   render(): TemplateResult {
-    return html`
-    <nav class="st-horizontal-tabs">
-      ${
-        this.options.map(
-          (option: StHorizontalTab, i: number) => this.getTabElement(option, i)
-        )
-      }
+    return html` <nav class="st-horizontal-tabs">
+      ${this.options.map((option: StHorizontalTab, i: number) => this.getTabElement(option, i))}
       <slot></slot>
     </nav>`;
   }
@@ -59,16 +63,19 @@ export class StHorizontalTabs extends LitElement {
    */
   public getTabElement(option: StHorizontalTab, index: number): TemplateResult {
     return html`
-      <a class="tab ${this.getTabClasses(option)}"
+      <a
+        class="tab ${this.getTabClasses(option)}"
         @click="${() => this.activateOption(option)}"
         href="javascript:void(0)"
-        id="${this.qaTag + '-tab-' + index}">${option.text}</a>
+        id="${this.qaTag + '-tab-' + index}"
+        >${option.text}</a
+      >
     `;
   }
 
   public activateOption(option: StHorizontalTab): void {
     const myEvent = new CustomEvent('changed-option', {
-      detail: option
+      detail: option,
     });
     this.dispatchEvent(myEvent);
   }
@@ -84,7 +91,6 @@ export class StHorizontalTabs extends LitElement {
     }
     return classes.join(' ');
   }
-
 }
 
 declare global {
