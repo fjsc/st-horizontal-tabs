@@ -15,7 +15,7 @@
     "postcss",
     "webpack",
     "tabs"
- ],
+  ],
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.config.cjs",
     "build": "standard-changelog && npm run clean && npm run build:element && npm run build:demo",
@@ -105,16 +105,11 @@
       "path": "./.config/commitizen-format/st-commitizen.js"
     }
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "pretty-quick --staged && npm run lint",
-      "pre-push": "npm run test && npm run build"
+      "pre-push": "npm run build"
     }
   }
 }
